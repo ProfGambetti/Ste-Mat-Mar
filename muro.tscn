@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://t6wh71kc7pya"]
+
+[ext_resource type="Texture2D" uid="uid://bo68j8ok5miqr" path="res://muro_vuoto.png" id="1_beu6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_beu6c"]
+size = Vector2(1147, 79)
+
+[node name="Muro" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(573.25, 43.625004)
+scale = Vector2(1.9315878, 1.020115)
+texture = ExtResource("1_beu6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(573.5, 47.5)
+shape = SubResource("RectangleShape2D_beu6c")
