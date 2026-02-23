@@ -426,8 +426,8 @@ script = ExtResource("1_e6hjw")
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1152, 648)
 offset_top = 3.0
-offset_right = 1152.0
-offset_bottom = 652.0
+offset_right = 14920.0
+offset_bottom = 7891.0
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_tohwg")
@@ -438,15 +438,59 @@ layer_0/tile_data = PackedInt32Array(0, 589828, 0, 65536, 589828, 1, 131072, 589
 position = Vector2(118, 143)
 
 [node name="Player" parent="." instance=ExtResource("2_is5ow")]
-position = Vector2(118, 143)
+position = Vector2(608, 242)
 
 [node name="Muro" parent="." instance=ExtResource("3_is5ow")]
-position = Vector2(4, 564)
+position = Vector2(0, 1533)
+scale = Vector2(2.9199996, 1)
+
+[node name="Muro" parent="Muro" instance=ExtResource("3_is5ow")]
+position = Vector2(882.5343, -1034)
+scale = Vector2(0.23506753, 1)
+
+[node name="Muro" parent="Muro/Muro" instance=ExtResource("3_is5ow")]
+position = Vector2(1.4567871, 373)
+scale = Vector2(0.992643, 1)
 
 [node name="Muro2" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(0, -1)
+
+[node name="Muro3" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(-4.689582e-13, 394)
+rotation = -1.5707964
+scale = Vector2(0.3207538, 0.6677787)
+
+[node name="Muro4" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(1152.0001, -1.9999995)
+scale = Vector2(4.3599997, 1)
+
+[node name="Muro5" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(2601, 2.9999998)
+rotation = 1.5707964
+scale = Vector2(2.1551416, 1.3717554)
+
+[node name="Muro6" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(6574.9995, 1621.0001)
+rotation = -3.1415925
+scale = Vector2(2.816184, 1.4007208)
+
+[node name="Muro8" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(3363.0002, 1899.9998)
+rotation = -1.5707961
+scale = Vector2(1.6421413, 1.8303612)
+
+[node name="Muro9" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(6143.9995, -3)
+rotation = 1.5707964
+scale = Vector2(2.145832, 1.0672995)
+
+[node name="Muro7" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(-3.3086436e-11, 9351)
+rotation = -1.5707964
+scale = Vector2(10.278092, 0.6417136)
 
 [node name="Collectible" parent="." instance=ExtResource("4_bq48c")]
-position = Vector2(628, 267)
+position = Vector2(625, 225)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

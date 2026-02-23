@@ -15,6 +15,10 @@ position = Vector2(0.9999981, -1.9073486e-06)
 scale = Vector2(0.78571427, 0.76602554)
 texture = ExtResource("2_i3pqv")
 
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+position = Vector2(-1.272725, 2.4899282e-06)
+scale = Vector2(1.2727274, 1.3054395)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5762787e-06, -1.0000015)
 scale = Vector2(0.78571427, 0.76602554)
