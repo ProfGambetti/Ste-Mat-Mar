@@ -1,25 +1,56 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnyk6jwbbno6b"]
+[gd_scene load_steps=10 format=3 uid="uid://bnyk6jwbbno6b"]
 
 [ext_resource type="Script" uid="uid://cu3yo1xkacwqo" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://dux5vexug5mhd" path="res://omino.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://dotk36n2usrup" path="res://frame-1.png" id="2_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://d2iv3r3opogut" path="res://frame-2.png" id="3_dw050"]
+[ext_resource type="Texture2D" uid="uid://bqo6v4002jq8" path="res://frame-3.png" id="4_b26j0"]
+[ext_resource type="Texture2D" uid="uid://c6bf32rnddgwm" path="res://frame-4.png" id="5_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://ck5tshsjox1ty" path="res://frame-5.png" id="6_nvl01"]
+[ext_resource type="Texture2D" uid="uid://cpafnahijqftb" path="res://frame-6.png" id="7_ivps1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqtel"]
 radius = 20.500002
 height = 73.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_urp6f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1jxqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dw050")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b26j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n7ghd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nvl01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ivps1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_onrkg")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.9999981, -1.9073486e-06)
-scale = Vector2(0.78571427, 0.76602554)
-texture = ExtResource("2_i3pqv")
-
-[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
-position = Vector2(-1.272725, 2.4899282e-06)
-scale = Vector2(1.2727274, 1.3054395)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5762787e-06, -1.0000015)
 scale = Vector2(0.78571427, 0.76602554)
 shape = SubResource("CapsuleShape2D_hqtel")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.3841858e-07, 0)
+scale = Vector2(0.061941963, 0.056115612)
+sprite_frames = SubResource("SpriteFrames_urp6f")
+animation = &"idle"
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
+position = Vector2(-5.960487e-08, 0)
