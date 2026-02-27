@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5vlpcmukthy6"]
+[gd_scene load_steps=14 format=3 uid="uid://c5vlpcmukthy6"]
 
 [ext_resource type="Texture2D" uid="uid://bvlqtaw7dt4v1" path="res://TileSheet.png" id="1_4ikea"]
 [ext_resource type="Script" uid="uid://bm0kjdra42fd2" path="res://room_1.gd" id="1_e6hjw"]
 [ext_resource type="PackedScene" uid="uid://bnyk6jwbbno6b" path="res://player.tscn" id="2_is5ow"]
+[ext_resource type="PackedScene" uid="uid://bkck6fteuuego" path="res://Monster.tscn" id="2_vc1db"]
 [ext_resource type="PackedScene" uid="uid://t6wh71kc7pya" path="res://muro.tscn" id="3_is5ow"]
 [ext_resource type="PackedScene" uid="uid://cui5soffr645j" path="res://collectible.tscn" id="4_bq48c"]
 [ext_resource type="FontFile" uid="uid://j4eu55wyv2jm" path="res://allura/Allura-Regular.ttf" id="5_yutty"]
@@ -424,6 +425,7 @@ font_size = 35
 font_color = Color(0, 0, 0, 1)
 
 [node name="Room1" type="Node2D"]
+scale = Vector2(0.586204, 0.9099267)
 script = ExtResource("1_e6hjw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -441,7 +443,11 @@ layer_0/tile_data = PackedInt32Array(0, 589828, 0, 65536, 589828, 1, 131072, 589
 position = Vector2(118, 143)
 
 [node name="Player" parent="." instance=ExtResource("2_is5ow")]
-position = Vector2(608, 242)
+position = Vector2(523.7085, 303.3211)
+
+[node name="Monster" parent="." instance=ExtResource("2_vc1db")]
+position = Vector2(266.119, 229.68883)
+scale = Vector2(4.0536585, 2.8286083)
 
 [node name="Muro" parent="." instance=ExtResource("3_is5ow")]
 position = Vector2(0, 1533)
@@ -488,7 +494,7 @@ rotation = 1.5707964
 scale = Vector2(2.145832, 1.0672995)
 
 [node name="Muro7" parent="." instance=ExtResource("3_is5ow")]
-position = Vector2(-3.3086436e-11, 9351)
+position = Vector2(-2.9999998, 9358.001)
 rotation = -1.5707964
 scale = Vector2(10.278092, 0.6417136)
 

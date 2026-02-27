@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkck6fteuuego"]
+
+[ext_resource type="Script" uid="uid://cmjxgrt4d4p8g" path="res://monster.gd" id="1_vb3nq"]
+[ext_resource type="Texture2D" uid="uid://cgo46lnng14ed" path="res://mostrell.png" id="2_ssiii"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5vc1h"]
+radius = 23.0
+height = 70.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vb3nq"]
+radius = 22.0
+height = 70.0
+
+[node name="Monster" type="CharacterBody2D"]
+script = ExtResource("1_vb3nq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ssiii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5vc1h")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CapsuleShape2D_vb3nq")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
