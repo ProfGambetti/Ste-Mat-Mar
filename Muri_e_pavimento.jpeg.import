@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqa2l6n1ydgo1"
-path="res://.godot/imported/muri_e_pavimenti.jpeg-f076b062b046c1bcd2206e4aac22e366.ctex"
+uid="uid://cjpwvjoddxke4"
+path="res://.godot/imported/Muri_e_pavimento.jpeg-4fbdaa9c371c02b147440069430504b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://muri_e_pavimenti.jpeg"
-dest_files=["res://.godot/imported/muri_e_pavimenti.jpeg-f076b062b046c1bcd2206e4aac22e366.ctex"]
+source_file="res://Muri_e_pavimento.jpeg"
+dest_files=["res://.godot/imported/Muri_e_pavimento.jpeg-4fbdaa9c371c02b147440069430504b9.ctex"]
 
 [params]
 
