@@ -1,13 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5vlpcmukthy6"]
+[gd_scene load_steps=16 format=3 uid="uid://c5vlpcmukthy6"]
 
 [ext_resource type="Texture2D" uid="uid://bvlqtaw7dt4v1" path="res://TileSheet.png" id="1_4ikea"]
 [ext_resource type="Script" uid="uid://bm0kjdra42fd2" path="res://room_1.gd" id="1_e6hjw"]
+[ext_resource type="PackedScene" uid="uid://bkck6fteuuego" path="res://Monster.tscn" id="2_2nb8s"]
 [ext_resource type="PackedScene" uid="uid://bnyk6jwbbno6b" path="res://player.tscn" id="2_is5ow"]
+[ext_resource type="PackedScene" uid="uid://bjiwsbeybuxqq" path="res://Jumpscare.tscn" id="2_r63ts"]
 [ext_resource type="PackedScene" uid="uid://t6wh71kc7pya" path="res://muro.tscn" id="3_is5ow"]
 [ext_resource type="PackedScene" uid="uid://cui5soffr645j" path="res://collectible.tscn" id="4_bq48c"]
 [ext_resource type="FontFile" uid="uid://j4eu55wyv2jm" path="res://allura/Allura-Regular.ttf" id="5_yutty"]
 [ext_resource type="AudioStream" uid="uid://c1bbawugfdd51" path="res://freesound_community-key-get-39925.mp3" id="6_hrfef"]
 [ext_resource type="PackedScene" uid="uid://cb0f1j85d625m" path="res://exit_door.tscn" id="7_gg573"]
+[ext_resource type="AudioStream" uid="uid://clo5ctu4ls6k2" path="res://15419__pagancow__dorm-door-opening.wav" id="10_vc1db"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bq48c"]
 texture = ExtResource("1_4ikea")
@@ -422,18 +425,16 @@ font = ExtResource("5_yutty")
 font_size = 35
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vc1db"]
+vertices = PackedVector2Array(3674.8672, 1998.9531, 2632.711, 1994.0469, 2640.8906, 1942.9688, 3534.211, 1888.9531, 2713.1172, -57.59375, 2472.1719, -47.46875, 2496.1016, -271.79688, 2575, -359, 291.64844, 216.11719, 293.64063, 272.85938, 76, 270.1172, 76, 83.64844, 278.15625, 96.52344, 288.17188, 134.53125, 416.25, 142.60156, 401.20313, 214.88281, 3749.2969, -267.28906, 3742.3281, -58.09375, 3458.6797, -60.890625, 3472.6563, -271.6797, 3607.211, -367.9922, 4013.6563, -576.25, 4138.7188, -579.7031, 4125.25, -54.148438, 4006.6875, -372.7578, 3890.4531, -57.828125, 3900.5, -278.82813, 3827.7969, -358.1328, 2575, -585.6328, 2719.8672, -580.3594, 2163.3984, -351.8203, 2406.1328, -359, 2313.4375, -275.1797, 2026.6328, -284.54688, 3603.1875, -575.8672, 3831.8125, -573.1172, 3407, -386.89844, 3252, -278.29688, 4074, 1153.0234, 4076.9375, 1751.8203, 3671.8828, 1744.8203, 3530.789, 1727, 4914, 1109.0391, 4074, 1105.9609, 3203.2578, 407, 3196.2578, 136.9375, 4292, 130.95313, 5495, 495.0625, 1441.8438, 111.10156, 493.84375, 266, 400.20313, 266, 5488.047, 1759.8203, 4914, 1750.1563, 2303.4531, -47.539063, 2012.6094, -63.429688, 4292, -566.1172, 5489.047, -581.8594, 1257.0938, 1711, 97, 1718.9297, 97.99219, 407.9297, 365.03125, 598.3203, 364.04688, 406.0703, 404.39063, 624.97656, 499.1172, 595.3125, 2463.9922, 1727, 2462.0078, 407, 1971, 1896.0469, 2592.6016, 1946.9922, 2322.4922, 1943.8984, 2314.5078, 1993.7422, 1891.9219, 1981.2813, 1889.9219, 1726.2422, 1971, 1707, 2868, 120.96875, 2868, -573, 3407, -573, 3014.1406, -60.882813, 2292, 193.64844, 2292, 1707, 1636.1563, 125.03125, 1452.8438, -585.9375, 1985, -583.0469, 1985, -355.1875, 1844.1563, -292.39063, 3252, -63.867188, 1817.2188, -64.89844, 1632.8203, -83.046875, 2177.3984, -582.8828, 2403.1328, -580.1094, 419.28125, 101.09375, 3010.1406, 218.64844)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11, 12, 13), PackedInt32Array(8, 13, 14, 15), PackedInt32Array(16, 17, 18, 19, 20), PackedInt32Array(21, 22, 23, 24), PackedInt32Array(24, 23, 25, 26), PackedInt32Array(27, 24, 26, 16), PackedInt32Array(7, 28, 29, 4), PackedInt32Array(30, 31, 7, 6, 32, 33), PackedInt32Array(20, 34, 35, 27, 16), PackedInt32Array(36, 20, 19, 37), PackedInt32Array(38, 39, 40, 41), PackedInt32Array(42, 43, 44, 45, 46, 47), PackedInt32Array(48, 49, 50, 15, 14), PackedInt32Array(47, 51, 52, 42), PackedInt32Array(32, 53, 54, 33), PackedInt32Array(55, 56, 47, 46), PackedInt32Array(57, 58, 59, 60), PackedInt32Array(59, 61, 60), PackedInt32Array(57, 60, 62), PackedInt32Array(57, 62, 63), PackedInt32Array(41, 64, 65, 44, 43, 38), PackedInt32Array(3, 41, 40, 0), PackedInt32Array(66, 3, 2), PackedInt32Array(66, 2, 67, 68), PackedInt32Array(66, 68, 69, 70), PackedInt32Array(66, 70, 71, 72), PackedInt32Array(73, 74, 75, 76), PackedInt32Array(77, 78, 72, 79), PackedInt32Array(80, 81, 82, 83), PackedInt32Array(37, 84, 76), PackedInt32Array(83, 85, 86, 80), PackedInt32Array(87, 88, 31, 30), PackedInt32Array(82, 30, 33, 83), PackedInt32Array(48, 80, 86, 79), PackedInt32Array(14, 89, 48), PackedInt32Array(71, 57, 63, 49, 48, 79, 72), PackedInt32Array(77, 79, 73, 90), PackedInt32Array(76, 90, 73), PackedInt32Array(37, 76, 75), PackedInt32Array(37, 75, 36)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(66, 73, 66, 280, 304, 283, 302, 226, 391, 225, 390, 276, 484, 276, 489, 588, 406, 614, 375, 593, 374, 396, 88, 398, 87, 1729, 1257, 1721, 1880, 1736, 1882, 1991, 2323, 2004, 2331, 1954, 2593, 1957, 2629, 1954, 2621, 2004, 3685, 2009, 3682, 1755, 4087, 1762, 4084, 1153, 4084, 1116, 4904, 1119, 4904, 1760, 5498, 1770, 5505, 495, 5499, -592, 4282, -576, 4282, 121, 3186, 127, 3193, 397, 2452, 397, 2454, 1737, 3521, 1737, 3524, 1879, 1981, 1886, 1981, 1717, 2302, 1717, 2302, 204, 3020, 229, 3024, -51, 3262, -54, 3262, -268, 3462, -262, 3448, -51, 3752, -48, 3759, -258, 3890, -268, 3880, -48, 4135, -44, 4149, -590, 4004, -586, 3997, -382, 3838, -369, 3842, -583, 3593, -586, 3597, -379, 3417, -396, 3417, -583, 2858, -583, 2858, 63, 2858, 111, 1646, 115, 1643, -72, 1826, -54, 1853, -282, 2016, -275, 2002, -54, 2313, -37, 2323, -265, 2485, -262, 2461, -37, 2723, -48, 2730, -590, 2565, -596, 2565, -369, 2416, -369, 2413, -590, 2168, -593, 2154, -362, 1995, -365, 1995, -593, 1443, -596, 1432, 101, 410, 91, 407, 132, 296, 125, 286, 87), PackedVector2Array(732, 638, 738, 978, 1088, 972, 1093, 627), PackedVector2Array(710, 1150, 704, 1483, 1082, 1472, 1088, 1133), PackedVector2Array(1505, 1150, 1516, 1495, 1894, 1489, 1883, 1144), PackedVector2Array(1499, 655, 1505, 989, 1861, 966, 1866, 644), PackedVector2Array(2856, 833, 2862, 1578, 2995, 1567, 3001, 833), PackedVector2Array(3345, 844, 3356, 1611, 3501, 1589, 3512, 822), PackedVector2Array(3668, 444, 3668, 605, 3957, 594, 3951, 683, 3662, 700, 3668, 811, 3973, 822, 3957, 978, 4112, 994, 4157, 822, 4363, 816, 4374, 694, 4168, 705, 4157, 583, 4407, 583, 4418, 455), PackedVector2Array(4602, 444, 4596, 588, 4869, 566, 4885, 688, 4630, 705, 4624, 800, 4891, 811, 4891, 966, 5069, 972, 5080, 833, 5297, 822, 5308, 688, 5074, 700, 5069, 572, 5341, 577, 5352, 433), PackedVector2Array(4513, -390, 4524, -285, 4796, -296, 4802, -201, 4541, -190, 4546, -96, 4802, -73, 4819, 99, 4952, 121, 4985, -90, 5241, -84, 5224, -185, 4985, -185, 4985, -296, 5263, -290, 5263, -440)])
+
 [node name="Room1" type="Node2D"]
 position = Vector2(0, -11)
 script = ExtResource("1_e6hjw")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(1152, 648)
-offset_left = -497.0
-offset_top = -1338.0
-offset_right = 14423.0
-offset_bottom = 6550.0
-scale = Vector2(0.46531153, 0.49704912)
-color = Color(1, 1, 0.40784314, 1)
+[node name="Jumpscare" parent="." instance=ExtResource("2_r63ts")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_tohwg")
@@ -443,29 +444,28 @@ layer_0/tile_data = PackedInt32Array(0, 589828, 0, 65536, 589828, 1, 131072, 589
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(108, 144)
 
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+offset_left = -507.00003
+offset_top = -1302.9999
+offset_right = 14413.0
+offset_bottom = 6585.0
+scale = Vector2(0.46531153, 0.49704912)
+color = Color(1, 1, 0.40784314, 1)
+
 [node name="Player" parent="." instance=ExtResource("2_is5ow")]
-position = Vector2(137, 182)
-scale = Vector2(2.0956013, 1.5216073)
+position = Vector2(444, 183)
+scale = Vector2(0.689, 0.5)
+
+[node name="Monster" parent="." instance=ExtResource("2_2nb8s")]
+position = Vector2(209, 172)
+scale = Vector2(1.08, 1.1657702)
 
 [node name="Collectible" parent="." instance=ExtResource("4_bq48c")]
-position = Vector2(238.00002, 184.00002)
-scale = Vector2(1.3057626, 1.3057626)
+position = Vector2(5148.0005, 629.00006)
+scale = Vector2(2.2263465, 2.2263465)
 
 [node name="AudioStreamPlayer1" type="AudioStreamPlayer2D" parent="Collectible"]
-stream = ExtResource("6_hrfef")
-
-[node name="Collectible" parent="Collectible" instance=ExtResource("4_bq48c")]
-position = Vector2(2204.8416, -410.48813)
-scale = Vector2(1.3057626, 1.3057626)
-
-[node name="AudioStreamPlayer1" type="AudioStreamPlayer2D" parent="Collectible/Collectible"]
-stream = ExtResource("6_hrfef")
-
-[node name="Collectible" parent="Collectible/Collectible" instance=ExtResource("4_bq48c")]
-position = Vector2(1191.1914, 575.3612)
-scale = Vector2(1.3057626, 1.3057626)
-
-[node name="AudioStreamPlayer1" type="AudioStreamPlayer2D" parent="Collectible/Collectible/Collectible"]
 stream = ExtResource("6_hrfef")
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -486,6 +486,9 @@ metadata/_edit_use_anchors_ = true
 [node name="ExitDoor" parent="." instance=ExtResource("7_gg573")]
 position = Vector2(5681.9995, 1684.9999)
 scale = Vector2(1.4277011, 2.058542)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ExitDoor"]
+stream = ExtResource("10_vc1db")
 
 [node name="Muro7" parent="." instance=ExtResource("3_is5ow")]
 position = Vector2(-4, 693)
@@ -1020,7 +1023,7 @@ position = Vector2(407, -297.99994)
 position = Vector2(-7.0000305, 405.00006)
 
 [node name="Muro" parent="." instance=ExtResource("3_is5ow")]
-position = Vector2(12, 1)
+position = Vector2(58, 1)
 
 [node name="Muro10" parent="." instance=ExtResource("3_is5ow")]
 position = Vector2(1792, 2087)
@@ -1101,5 +1104,9 @@ position = Vector2(233, 0.0003232956)
 
 [node name="Muro13" parent="Muro13/Muro14/Muro13" instance=ExtResource("3_is5ow")]
 position = Vector2(233, 0.0003232956)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(4, 3)
+navigation_polygon = SubResource("NavigationPolygon_vc1db")
 
 [connection signal="collected" from="Collectible" to="." method="_on_collectible_collected"]
