@@ -1,16 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://c5vlpcmukthy6"]
+[gd_scene load_steps=12 format=3 uid="uid://c5vlpcmukthy6"]
 
 [ext_resource type="Texture2D" uid="uid://bvlqtaw7dt4v1" path="res://TileSheet.png" id="1_4ikea"]
 [ext_resource type="Script" uid="uid://bm0kjdra42fd2" path="res://room_1.gd" id="1_e6hjw"]
-[ext_resource type="PackedScene" uid="uid://bjiwsbeybuxqq" path="res://Jumpscare.tscn" id="2_3afyh"]
 [ext_resource type="PackedScene" uid="uid://bnyk6jwbbno6b" path="res://player.tscn" id="2_is5ow"]
-[ext_resource type="PackedScene" uid="uid://bkck6fteuuego" path="res://Monster.tscn" id="2_vc1db"]
 [ext_resource type="PackedScene" uid="uid://t6wh71kc7pya" path="res://muro.tscn" id="3_is5ow"]
 [ext_resource type="PackedScene" uid="uid://cui5soffr645j" path="res://collectible.tscn" id="4_bq48c"]
 [ext_resource type="FontFile" uid="uid://j4eu55wyv2jm" path="res://allura/Allura-Regular.ttf" id="5_yutty"]
 [ext_resource type="AudioStream" uid="uid://c1bbawugfdd51" path="res://freesound_community-key-get-39925.mp3" id="6_hrfef"]
 [ext_resource type="PackedScene" uid="uid://cb0f1j85d625m" path="res://exit_door.tscn" id="7_gg573"]
-[ext_resource type="AudioStream" uid="uid://clo5ctu4ls6k2" path="res://15419__pagancow__dorm-door-opening.wav" id="9_2nb8s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bq48c"]
 texture = ExtResource("1_4ikea")
@@ -425,17 +422,18 @@ font = ExtResource("5_yutty")
 font_size = 35
 font_color = Color(0, 0, 0, 1)
 
-[node name="Room1" type="Node2D" groups=["game"]]
-scale = Vector2(0.586204, 0.9099267)
+[node name="Room1" type="Node2D"]
+position = Vector2(0, -11)
 script = ExtResource("1_e6hjw")
-
-[node name="Jumpscare" parent="." instance=ExtResource("2_3afyh")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1152, 648)
-offset_top = 3.0
-offset_right = 14920.0
-offset_bottom = 7891.0
+offset_left = -497.0
+offset_top = -1338.0
+offset_right = 14423.0
+offset_bottom = 6550.0
+scale = Vector2(0.46531153, 0.49704912)
+color = Color(1, 1, 0.40784314, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_tohwg")
@@ -443,68 +441,31 @@ format = 2
 layer_0/tile_data = PackedInt32Array(0, 589828, 0, 65536, 589828, 1, 131072, 589828, 2, 1, 655364, 0, 65537, 655364, 1, 131073, 655364, 2, 196609, 720896, 1610612743, 2, 720900, 0, 65538, 720900, 1, 131074, 720900, 2, 3, 786436, 0, 65539, 786436, 1, 131075, 786436, 2, 65527, 4, 0, 131063, 4, 1, 196599, 4, 2, 262135, 4, 3, 327671, 4, 4, 65528, 65540, 0, 131064, 65540, 1, 196600, 65540, 2, 262136, 65540, 3, 327672, 65540, 4, 65529, 131076, 0, 131065, 131076, 1, 196601, 131076, 2, 262137, 131076, 3, 327673, 131076, 4, 65530, 196612, 0, 131066, 196612, 1, 196602, 196612, 2, 262138, 196612, 3, 327674, 196612, 4, 65531, 262148, 0, 131067, 262148, 1, 196603, 262148, 2, 262139, 262148, 3, 327675, 262148, 4, 65532, 327684, 0, 131068, 327684, 1, 196604, 327684, 2, 262140, 327684, 3, 327676, 327684, 4, 65533, 393220, 0, 131069, 393220, 1, 196605, 393220, 2, 262141, 393220, 3, 327677, 393220, 4, 65534, 458756, 0, 131070, 458756, 1, 196606, 458756, 2, 262142, 458756, 3, 327678, 458756, 4, 65535, 524292, 0, 131071, 524292, 1, 196607, 524292, 2, 262143, 524292, 3, 327679, 524292, 4, 262144, 655360, 1610612742, 262145, 655360, 1610612743, 4, 851972, 0, 65540, 851972, 1, 131076, 851972, 2, 5, 917508, 0, 65541, 917508, 1, 131077, 917508, 2, 6, 983044, 0, 65542, 983044, 1, 131078, 983044, 2, 7, 1048580, 0, 65543, 1048580, 1, 131079, 1048580, 2, 8, 1114116, 0, 65544, 1114116, 1, 131080, 1114116, 2, 9, 1179652, 0, 65545, 1179652, 1, 131081, 1179652, 2, 10, 1245188, 0, 65546, 1245188, 1, 131082, 1245188, 2, 11, 1310724, 0, 65547, 1310724, 1, 131083, 1310724, 2, 12, 1376260, 0, 65548, 1376260, 1, 131084, 1376260, 2, 13, 1441796, 0, 65549, 1441796, 1, 131085, 1441796, 2, 196621, 720896, 1610612742, 262157, 655360, 1610612742, 14, 1507332, 0, 65550, 1507332, 1, 131086, 1507332, 2, 15, 1572868, 0, 65551, 1572868, 1, 131087, 1572868, 2, 16, 1638404, 0, 65552, 1638404, 1, 131088, 1638404, 2, 196624, 1638404, 3, 262160, 1638404, 4, 17, 1703940, 0, 65553, 1703940, 1, 131089, 1703940, 2, 196625, 1703940, 3, 262161, 1703940, 4, 18, 1769476, 0, 65554, 1769476, 1, 131090, 1769476, 2, 196626, 1769476, 3, 262162, 1769476, 4, 19, 1835012, 0, 65555, 1835012, 1, 131091, 1835012, 2, 196627, 1835012, 3, 262163, 1835012, 4, 20, 1900548, 0, 65556, 1900548, 1, 131092, 1900548, 2, 196628, 1900548, 3, 262164, 1900548, 4, 21, 1966084, 0, 65557, 1966084, 1, 131093, 1966084, 2, 196629, 1966084, 3, 262165, 1966084, 4, 22, 2031620, 0, 65558, 2031620, 1, 131094, 2031620, 2, 196630, 2031620, 3, 262166, 2031620, 4, 23, 2097156, 0, 65559, 2097156, 1, 131095, 2097156, 2, 196631, 2097156, 3, 262167, 2097156, 4, 24, 2162692, 0, 65560, 2162692, 1, 131096, 2162692, 2, 196632, 2162692, 3, 262168, 2162692, 4, 25, 2228228, 0, 65561, 2228228, 1, 131097, 2228228, 2, 196633, 2228228, 3, 262169, 2228228, 4, 26, 2293764, 0, 65562, 2293764, 1, 131098, 2293764, 2, 196634, 2293764, 3, 262170, 2293764, 4, 27, 2359300, 0, 65563, 2359300, 1, 131099, 2359300, 2, 196635, 2359300, 3, 262171, 2359300, 4, 917504, 0, 1610612742, 851968, 65536, 1610612742, 786432, 131072, 1610612742, 720896, 196608, 1610612742, 655360, 262144, 1610612742, 589824, 327680, 1610612742, 524288, 393216, 1610612742, 458752, 458752, 1610612742, 393216, 524288, 1610612742, 327680, 589824, 1610612742, 917505, 0, 1610612743, 851969, 65536, 1610612743, 786433, 131072, 1610612743, 720897, 196608, 1610612743, 655361, 262144, 1610612743, 589825, 327680, 1610612743, 524289, 393216, 1610612743, 458753, 458752, 1610612743, 393217, 524288, 1610612743, 327681, 589824, 1610612743, 851970, 983040, 0, 851971, 1048576, 0, 851972, 1114112, 0, 851973, 1179648, 0, 851974, 983040, 0, 851975, 1048576, 0, 851976, 1114112, 0, 851977, 983040, 0, 851978, 1048576, 0, 851979, 1114112, 0, 851980, 1179648, 0, 851981, 983040, 1610612736, 917506, 0, 7, 917507, 65536, 7, 917508, 131072, 7, 917509, 196608, 7, 917510, 262144, 7, 917511, 327680, 7, 917512, 393216, 7, 917513, 458752, 7, 917514, 524288, 7, 917515, 589824, 7, 917516, 655360, 7, 917517, 0, 1610612742, 196622, 720896, 1610612743, 262158, 655360, 1610612743, 327694, 589824, 1610612743, 393230, 524288, 1610612743, 458766, 458752, 1610612743, 524302, 393216, 1610612743, 589838, 327680, 1610612743, 655374, 262144, 1610612743, 720910, 196608, 1610612743, 786446, 131072, 1610612743, 851982, 65536, 1610612743, 917518, 0, 1610612743, 327693, 1179648, 1610612736, 393229, 1114112, 1610612736, 458765, 1048576, 1610612736, 524301, 983040, 1610612736, 589837, 1179648, 1610612736, 655373, 1179648, 1610612736, 720909, 1114112, 1610612736, 786445, 1048576, 1610612736, 196610, 0, 6, 262146, 0, 7, 196611, 65536, 6, 262147, 65536, 7, 196612, 131072, 6, 262148, 131072, 7, 196613, 196608, 6, 262149, 196608, 7, 196614, 262144, 6, 262150, 262144, 7, 196615, 327680, 6, 262151, 327680, 7, 196616, 393216, 6, 262152, 393216, 7, 196617, 458752, 6, 262153, 458752, 7, 196618, 524288, 6, 262154, 524288, 7, 196619, 589824, 6, 262155, 589824, 7, 196620, 655360, 6, 262156, 655360, 7, 327682, 983040, 0, 393218, 983040, 1, 458754, 983040, 2, 524290, 983040, 0, 589826, 983040, 1, 327683, 1048576, 0, 393219, 1048576, 1, 458755, 1048576, 2, 524291, 1048576, 0, 589827, 1048576, 1, 327684, 1114112, 0, 393220, 1114112, 1, 458756, 1114112, 2, 524292, 1114112, 0, 589828, 1114112, 1, 327685, 1179648, 0, 393221, 1179648, 1, 458757, 1179648, 2, 524293, 1179648, 0, 589829, 1179648, 1, 327686, 983040, 0, 393222, 983040, 1, 458758, 983040, 2, 524294, 983040, 0, 589830, 983040, 1, 327687, 1048576, 0, 393223, 1048576, 1, 458759, 1048576, 2, 524295, 1048576, 0, 589831, 1048576, 1, 327688, 1114112, 0, 393224, 1114112, 1, 458760, 1114112, 2, 524296, 1114112, 0, 589832, 1114112, 1, 327689, 983040, 0, 393225, 983040, 1, 458761, 983040, 2, 524297, 983040, 0, 589833, 983040, 1, 327690, 1048576, 0, 393226, 1048576, 1, 458762, 1048576, 2, 524298, 1048576, 0, 589834, 1048576, 1, 327691, 1114112, 0, 393227, 1114112, 1, 458763, 1114112, 2, 524299, 1114112, 0, 589835, 1114112, 1, 327692, 1179648, 0, 393228, 1179648, 1, 458764, 1179648, 2, 524300, 1179648, 0, 589836, 1179648, 1, 655362, 983040, 2, 720898, 983040, 3, 786434, 983040, 4, 655363, 1048576, 2, 720899, 1048576, 3, 786435, 1048576, 4, 655364, 1114112, 2, 720900, 1114112, 3, 786436, 1114112, 4, 655365, 1179648, 2, 720901, 1179648, 3, 786437, 1179648, 4, 655366, 983040, 2, 720902, 983040, 3, 786438, 983040, 4, 655367, 1048576, 2, 720903, 1048576, 3, 786439, 1048576, 4, 655368, 1114112, 2, 720904, 1114112, 3, 786440, 1114112, 4, 655369, 983040, 2, 720905, 983040, 3, 786441, 983040, 0, 655370, 1048576, 2, 720906, 1048576, 3, 786442, 1048576, 0, 655371, 1114112, 2, 720907, 1114112, 3, 786443, 1114112, 0, 655372, 1179648, 2, 720908, 1179648, 3, 786444, 1179648, 0, 196608, 720896, 1610612742)
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(118, 143)
+position = Vector2(108, 144)
 
 [node name="Player" parent="." instance=ExtResource("2_is5ow")]
-position = Vector2(523.7085, 303.3211)
-
-[node name="Monster" parent="." instance=ExtResource("2_vc1db")]
-position = Vector2(266.119, 229.68883)
-scale = Vector2(4.0536585, 2.8286083)
-
-[node name="Muro" parent="." instance=ExtResource("3_is5ow")]
-position = Vector2(0, 1533)
-scale = Vector2(2.9199996, 1)
-
-[node name="Muro" parent="Muro" instance=ExtResource("3_is5ow")]
-position = Vector2(882.5343, -1034)
-scale = Vector2(0.23506753, 1)
-
-[node name="Muro" parent="Muro/Muro" instance=ExtResource("3_is5ow")]
-position = Vector2(1.4567871, 373)
-scale = Vector2(0.992643, 1)
-
-[node name="Muro2" parent="." instance=ExtResource("3_is5ow")]
-position = Vector2(0, -1)
-
-[node name="Muro3" parent="." instance=ExtResource("3_is5ow")]
-position = Vector2(-4.689582e-13, 394)
-rotation = -1.5707964
-scale = Vector2(0.3207538, 0.6677787)
-
-[node name="Muro4" parent="." instance=ExtResource("3_is5ow")]
-position = Vector2(1152.0001, -1.9999995)
-scale = Vector2(4.3599997, 1)
-
-[node name="Muro5" parent="." instance=ExtResource("3_is5ow")]
-position = Vector2(2601, 2.9999998)
-rotation = 1.5707964
-scale = Vector2(2.1551416, 1.3717554)
-
-[node name="Muro6" parent="." instance=ExtResource("3_is5ow")]
-position = Vector2(6574.9995, 1621.0001)
-rotation = -3.1415925
-scale = Vector2(2.816184, 1.4007208)
-
-[node name="Muro8" parent="." instance=ExtResource("3_is5ow")]
-position = Vector2(3363.0002, 1899.9998)
-rotation = -1.5707961
-scale = Vector2(1.6421413, 1.8303612)
-
-[node name="Muro9" parent="." instance=ExtResource("3_is5ow")]
-position = Vector2(6143.9995, -3)
-rotation = 1.5707964
-scale = Vector2(2.145832, 1.0672995)
-
-[node name="Muro7" parent="." instance=ExtResource("3_is5ow")]
-position = Vector2(-2.9999998, 9358.001)
-rotation = -1.5707964
-scale = Vector2(10.278092, 0.6417136)
+position = Vector2(137, 182)
+scale = Vector2(2.0956013, 1.5216073)
 
 [node name="Collectible" parent="." instance=ExtResource("4_bq48c")]
-position = Vector2(775, 211)
+position = Vector2(238.00002, 184.00002)
+scale = Vector2(1.3057626, 1.3057626)
 
 [node name="AudioStreamPlayer1" type="AudioStreamPlayer2D" parent="Collectible"]
+stream = ExtResource("6_hrfef")
+
+[node name="Collectible" parent="Collectible" instance=ExtResource("4_bq48c")]
+position = Vector2(2204.8416, -410.48813)
+scale = Vector2(1.3057626, 1.3057626)
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer2D" parent="Collectible/Collectible"]
+stream = ExtResource("6_hrfef")
+
+[node name="Collectible" parent="Collectible/Collectible" instance=ExtResource("4_bq48c")]
+position = Vector2(1191.1914, 575.3612)
+scale = Vector2(1.3057626, 1.3057626)
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer2D" parent="Collectible/Collectible/Collectible"]
 stream = ExtResource("6_hrfef")
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -513,19 +474,632 @@ stream = ExtResource("6_hrfef")
 anchors_preset = -1
 anchor_right = 0.058159724
 anchor_bottom = 0.021604938
-offset_left = 734.0
-offset_top = 500.0
-offset_right = 1078.0
-offset_bottom = 549.0
+offset_left = 724.0
+offset_top = 501.0
+offset_right = 1068.0
+offset_bottom = 550.0
 label_settings = SubResource("LabelSettings_e6hjw")
 horizontal_alignment = 2
 vertical_alignment = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="ExitDoor" parent="." instance=ExtResource("7_gg573")]
-position = Vector2(1118, 310)
+position = Vector2(5681.9995, 1684.9999)
+scale = Vector2(1.4277011, 2.058542)
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer2D" parent="ExitDoor"]
-stream = ExtResource("9_2nb8s")
+[node name="Muro7" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(-4, 693)
+rotation = -1.5707964
+
+[node name="Muro9" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(475, 351)
+rotation = 1.5707963
+
+[node name="Muro9" parent="Muro9" instance=ExtResource("3_is5ow")]
+position = Vector2(580.00006, -554)
+rotation = 1.5707963
+
+[node name="Muro9" parent="Muro9/Muro9" instance=ExtResource("3_is5ow")]
+position = Vector2(236.99997, 12.000061)
+rotation = 1.5707963
+
+[node name="Muro9" parent="Muro9/Muro9/Muro9" instance=ExtResource("3_is5ow")]
+position = Vector2(236.99997, 12.000061)
+rotation = 1.5707963
+
+[node name="Muro9" parent="Muro9/Muro9/Muro9/Muro9" instance=ExtResource("3_is5ow")]
+position = Vector2(236.99997, 7.000061)
+rotation = 1.5707963
+
+[node name="Muro10" parent="Muro9/Muro9" instance=ExtResource("3_is5ow")]
+position = Vector2(-552.00006, 6.999817)
+rotation = 1.5707963
+
+[node name="Muro9" parent="Muro9/Muro9/Muro10" instance=ExtResource("3_is5ow")]
+position = Vector2(236.99997, 12.000061)
+rotation = 1.5707963
+
+[node name="Muro9" parent="Muro9/Muro9/Muro10/Muro9" instance=ExtResource("3_is5ow")]
+position = Vector2(236.99997, 12.000061)
+rotation = 1.5707963
+
+[node name="Muro9" parent="Muro9/Muro9/Muro10/Muro9/Muro9" instance=ExtResource("3_is5ow")]
+position = Vector2(236.99997, 7.000061)
+rotation = 1.5707963
+
+[node name="Muro10" parent="Muro9/Muro9/Muro10" instance=ExtResource("3_is5ow")]
+position = Vector2(-273.99963, -791.00006)
+rotation = 1.5707963
+
+[node name="Muro9" parent="Muro9/Muro9/Muro10/Muro10" instance=ExtResource("3_is5ow")]
+position = Vector2(236.99997, 12.000061)
+rotation = 1.5707963
+
+[node name="Muro9" parent="Muro9/Muro9/Muro10/Muro10/Muro9" instance=ExtResource("3_is5ow")]
+position = Vector2(236.99997, 12.000061)
+rotation = 1.5707963
+
+[node name="Muro9" parent="Muro9/Muro9/Muro10/Muro10/Muro9/Muro9" instance=ExtResource("3_is5ow")]
+position = Vector2(236.99997, 7.000061)
+rotation = 1.5707963
+
+[node name="Muro10" parent="Muro9/Muro9/Muro10/Muro10" instance=ExtResource("3_is5ow")]
+position = Vector2(1060.0001, 7.000305)
+rotation = 1.5707963
+
+[node name="Muro9" parent="Muro9/Muro9/Muro10/Muro10/Muro10" instance=ExtResource("3_is5ow")]
+position = Vector2(236.99997, 12.000061)
+rotation = 1.5707963
+
+[node name="Muro9" parent="Muro9/Muro9/Muro10/Muro10/Muro10/Muro9" instance=ExtResource("3_is5ow")]
+position = Vector2(236.99997, 12.000061)
+rotation = 1.5707963
+
+[node name="Muro9" parent="Muro9/Muro9/Muro10/Muro10/Muro10/Muro9/Muro9" instance=ExtResource("3_is5ow")]
+position = Vector2(236.99997, 7.000061)
+rotation = 1.5707963
+
+[node name="Muro8" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(-4, 926)
+rotation = -1.5707965
+
+[node name="Muro8" parent="Muro8" instance=ExtResource("3_is5ow")]
+position = Vector2(-231.99997, -5.054474e-05)
+
+[node name="Muro8" parent="Muro8/Muro8" instance=ExtResource("3_is5ow")]
+position = Vector2(-231.99997, -5.054474e-05)
+
+[node name="Muro8" parent="Muro8/Muro8/Muro8" instance=ExtResource("3_is5ow")]
+position = Vector2(-231.99997, -5.054474e-05)
+
+[node name="Muro8" parent="Muro8/Muro8/Muro8/Muro8" instance=ExtResource("3_is5ow")]
+position = Vector2(-233.99998, -1.0000534)
+
+[node name="Muro6" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(-2.9999924, 466)
+rotation = -1.5707964
+
+[node name="Muro2" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(-2, 238)
+rotation = -1.5707964
+
+[node name="Muro2" parent="Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(-36.000107, 2421)
+rotation = -3.1415927
+
+[node name="Muro2" parent="Muro2/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(218, -3.330713e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro2/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro3" parent="Muro2/Muro2/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(1361.9998, 1489.0001)
+rotation = 1.5707964
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro2/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro3" parent="Muro2/Muro2/Muro2/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(-929, -2.861023e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro2/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro3" parent="Muro2/Muro2/Muro2/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(-929, -2.861023e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(227.00002, -3.1908367e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro2/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(66.000015, -4.5983434e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro2/Muro2/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(-332, -200.00008)
+
+[node name="Muro3" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(-701, -8.677838e-06)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(235.00002, -3.1208983e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(238.00002, -3.0946718e-05)
+
+[node name="Muro3" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(-697, 0.99999166)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(234.00002, -1.0000312)
+
+[node name="Muro3" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(-6.1154366e-05, 706.00006)
+rotation = -1.5707964
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(227.00002, -3.1908367e-05)
+
+[node name="Muro3" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(-665.00006, 485.99997)
+rotation = -1.5707964
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(227.00002, -3.1908367e-05)
+
+[node name="Muro3" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(353.99994, 477.00003)
+rotation = -1.5707964
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro3" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(468, 5.000063)
+rotation = -3.1415927
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(218.00002, -3.575497e-05)
+
+[node name="Muro4" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(931.00006, -4.999878)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro4/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(227.00002, -3.1908367e-05)
+
+[node name="Muro3" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(353.99994, 477.00003)
+rotation = -1.5707964
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro4/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro3" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro4/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(468, 5.000063)
+rotation = -3.1415927
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro4/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(218.00002, -3.575497e-05)
+
+[node name="Muro4" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(-76.999756, -865)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro4/Muro4/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(227.00002, -3.1908367e-05)
+
+[node name="Muro3" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(353.99994, 477.00003)
+rotation = -1.5707964
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro4/Muro4/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00002, -3.1471252e-05)
+
+[node name="Muro3" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro4/Muro4/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(468, 5.000063)
+rotation = -3.1415927
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro3/Muro4/Muro4/Muro3/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(218.00002, -3.575497e-05)
+
+[node name="Muro" parent="Muro2/Muro2/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(1064, 1.0001163)
+
+[node name="Muro5" parent="Muro2/Muro2/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(928, 1.000061)
+
+[node name="Muro4" parent="Muro2/Muro2/Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(-460.9999, -723.0001)
+
+[node name="Muro2" parent="Muro2/Muro2/Muro2/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(80.00003, -1.0000515)
+
+[node name="Muro" parent="Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(-110.00012, 3079.9998)
+rotation = -1.5707964
+
+[node name="Muro" parent="Muro2/Muro" instance=ExtResource("3_is5ow")]
+position = Vector2(232.99997, -1.0000008)
+
+[node name="Muro" parent="Muro2/Muro/Muro" instance=ExtResource("3_is5ow")]
+position = Vector2(187, -5.108118e-05)
+
+[node name="Muro3" parent="Muro2" instance=ExtResource("3_is5ow")]
+position = Vector2(2.999979, 385)
+rotation = -3.1415927
+scale = Vector2(0.27999878, 1)
+
+[node name="Muro3" parent="Muro2/Muro3" instance=ExtResource("3_is5ow")]
+position = Vector2(-671.4315, 0.99996185)
+rotation = -6.2831855
+scale = Vector2(1.1371453, 1)
+
+[node name="Muro5" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(474, 355)
+rotation = -3.1415925
+
+[node name="Muro4" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(245, 1)
+
+[node name="Muro4" parent="Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(232, 0)
+
+[node name="Muro4" parent="Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(236, 0)
+
+[node name="Muro4" parent="Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(168, 2)
+rotation = -1.5707964
+
+[node name="Muro4" parent="Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 13)
+rotation = 1.5707964
+
+[node name="Muro4" parent="Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro5" parent="Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(1415, 1)
+
+[node name="Muro4" parent="Muro4/Muro5" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(232, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(236, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(168, 2)
+rotation = -1.5707964
+
+[node name="Muro4" parent="Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 13)
+rotation = 1.5707964
+
+[node name="Muro4" parent="Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro5" parent="Muro4/Muro5" instance=ExtResource("3_is5ow")]
+position = Vector2(1415, 1)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(232, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(236, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(168, 2)
+rotation = -1.5707964
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 13)
+rotation = 1.5707964
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro5" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(938, 11)
+rotation = 1.5707964
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234, 0)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(197, 1.6173213e-06)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(168, 2.0000029)
+rotation = -1.5707964
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(-785, -145)
+rotation = -1.5707964
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(192.00002, 63.00006)
+rotation = -1.5707964
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(60.000057, -422.99994)
+rotation = 1.5707964
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(87, 949.00006)
+
+[node name="Muro5" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(322, 960)
+rotation = 1.5707964
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5" instance=ExtResource("3_is5ow")]
+position = Vector2(142, 6.1035156e-05)
+
+[node name="Muro5" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5" instance=ExtResource("3_is5ow")]
+position = Vector2(379, 245)
+rotation = 1.5707964
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro5" instance=ExtResource("3_is5ow")]
+position = Vector2(-233.00006, 9.918213e-05)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro5/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(539.99994, 9.000066)
+rotation = 1.5707964
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro5/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(232.99994, -1.0000324)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro5/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(232.99994, -2.6226044e-05)
+rotation = 6.2831855
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(236.00005, 3.9999123)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(232.00005, -8.33988e-05)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(164.00005, -6.5564556e-05)
+
+[node name="Muro4" parent="Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro5/Muro5/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4/Muro4" instance=ExtResource("3_is5ow")]
+position = Vector2(234.00005, 11.999916)
+rotation = 1.5707964
+
+[node name="Muro3" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(245, 355)
+rotation = -3.1415925
+
+[node name="Muro11" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(1895, 5)
+rotation = -1.5707964
+
+[node name="Muro11" parent="Muro11" instance=ExtResource("3_is5ow")]
+position = Vector2(0.9999771, 465.00006)
+
+[node name="Muro11" parent="Muro11/Muro11" instance=ExtResource("3_is5ow")]
+position = Vector2(407, -297.99994)
+
+[node name="Muro11" parent="Muro11/Muro11/Muro11" instance=ExtResource("3_is5ow")]
+position = Vector2(-7.0000305, 405.00006)
+
+[node name="Muro12" parent="Muro11" instance=ExtResource("3_is5ow")]
+position = Vector2(-3.000063, 1436)
+
+[node name="Muro11" parent="Muro11/Muro12" instance=ExtResource("3_is5ow")]
+position = Vector2(0.9999771, 465.00006)
+
+[node name="Muro11" parent="Muro11/Muro12/Muro11" instance=ExtResource("3_is5ow")]
+position = Vector2(407, -297.99994)
+
+[node name="Muro11" parent="Muro11/Muro12/Muro11/Muro11" instance=ExtResource("3_is5ow")]
+position = Vector2(-7.0000305, 405.00006)
+
+[node name="Muro" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(12, 1)
+
+[node name="Muro10" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(1792, 2087)
+rotation = -1.5707964
+
+[node name="Muro10" parent="Muro10" instance=ExtResource("3_is5ow")]
+position = Vector2(3.8146973e-05, 248)
+rotation = -1.5707964
+
+[node name="Muro10" parent="Muro10/Muro10" instance=ExtResource("3_is5ow")]
+position = Vector2(-230.99994, -1.4781952e-05)
+
+[node name="Muro10" parent="Muro10/Muro10/Muro10" instance=ExtResource("3_is5ow")]
+position = Vector2(-230.99994, -1.4781952e-05)
+
+[node name="Muro10" parent="Muro10/Muro10/Muro10/Muro10" instance=ExtResource("3_is5ow")]
+position = Vector2(-230.99994, -1.4781952e-05)
+
+[node name="Muro10" parent="Muro10/Muro10/Muro10/Muro10/Muro10" instance=ExtResource("3_is5ow")]
+position = Vector2(-230.99994, -1.4781952e-05)
+
+[node name="Muro10" parent="Muro10/Muro10/Muro10/Muro10/Muro10/Muro10" instance=ExtResource("3_is5ow")]
+position = Vector2(-230.99994, -1.4781952e-05)
+
+[node name="Muro10" parent="Muro10/Muro10/Muro10/Muro10/Muro10/Muro10/Muro10" instance=ExtResource("3_is5ow")]
+position = Vector2(-230.99994, -1.4781952e-05)
+
+[node name="Muro10" parent="Muro10/Muro10/Muro10/Muro10/Muro10/Muro10/Muro10/Muro10" instance=ExtResource("3_is5ow")]
+position = Vector2(-230.99994, -1.4781952e-05)
+
+[node name="Muro10" parent="Muro10/Muro10/Muro10/Muro10/Muro10/Muro10/Muro10/Muro10/Muro10" instance=ExtResource("3_is5ow")]
+position = Vector2(-110.99994, -4.291219e-06)
+
+[node name="Muro10" parent="Muro10/Muro10/Muro10/Muro10/Muro10/Muro10/Muro10/Muro10/Muro10/Muro10" instance=ExtResource("3_is5ow")]
+position = Vector2(-4.999962, 244.00002)
+rotation = -1.5707964
+
+[node name="Muro12" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(3758, 727)
+
+[node name="Muro12" parent="Muro12" instance=ExtResource("3_is5ow")]
+position = Vector2(361, 0)
+
+[node name="Muro13" parent="Muro12" instance=ExtResource("3_is5ow")]
+position = Vector2(930, -1)
+
+[node name="Muro12" parent="Muro12/Muro13" instance=ExtResource("3_is5ow")]
+position = Vector2(361, 0)
+
+[node name="Muro13" parent="Muro12/Muro13" instance=ExtResource("3_is5ow")]
+position = Vector2(-74, -890)
+
+[node name="Muro12" parent="Muro12/Muro13/Muro13" instance=ExtResource("3_is5ow")]
+position = Vector2(361, 0)
+
+[node name="Muro14" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(4419, 1214)
+rotation = 3.1415927
+
+[node name="Muro14" parent="Muro14" instance=ExtResource("3_is5ow")]
+position = Vector2(-232.99997, -2.3841858e-07)
+
+[node name="Muro13" parent="." instance=ExtResource("3_is5ow")]
+position = Vector2(3458, 856)
+rotation = 1.5707964
+
+[node name="Muro13" parent="Muro13" instance=ExtResource("3_is5ow")]
+position = Vector2(233, 0.0003232956)
+
+[node name="Muro13" parent="Muro13/Muro13" instance=ExtResource("3_is5ow")]
+position = Vector2(233, 0.0003232956)
+
+[node name="Muro14" parent="Muro13" instance=ExtResource("3_is5ow")]
+position = Vector2(-2.9999924, 491.99994)
+
+[node name="Muro13" parent="Muro13/Muro14" instance=ExtResource("3_is5ow")]
+position = Vector2(233, 0.0003232956)
+
+[node name="Muro13" parent="Muro13/Muro14/Muro13" instance=ExtResource("3_is5ow")]
+position = Vector2(233, 0.0003232956)
 
 [connection signal="collected" from="Collectible" to="." method="_on_collectible_collected"]
