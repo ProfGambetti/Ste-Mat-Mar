@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # Velocità di inseguimento del mostro
-const SPEED = 120.0
+const SPEED = 180.0
 
 # Riferimento al player
 var player = null
