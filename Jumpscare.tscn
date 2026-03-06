@@ -6,7 +6,6 @@
 
 [node name="Jumpscare" type="CanvasLayer"]
 layer = 10
-visible = false
 script = ExtResource("1_fa0c3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
